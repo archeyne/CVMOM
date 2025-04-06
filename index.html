@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Carter - Professional Accountant</title>
+    <title>Yuly Adriana Gómez Prieto - Contadora Profesional</title>
     <style>
         /* Base Styles */
         * {
@@ -82,7 +82,7 @@
 
         /* Section Styles */
         section {
-            padding: 80px 0;
+            padding: 40px 0;
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease;
@@ -120,13 +120,25 @@
         }
 
         .timeline-item {
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Añade esto para contener el contenido */
+}
+
+.timeline-item ul {
+    margin-left: 20px; /* Añade sangría a la lista */
+    padding-right: 10px; /* Añade espacio a la derecha */
+    word-wrap: break-word; /* Permite que las palabras largas se rompan y continúen en la siguiente línea */
+    overflow-wrap: break-word; /* Alternativa a word-wrap para mejor soporte */
+}
+
+.timeline-item li {
+    margin-bottom: 8px; /* Espacio entre elementos de lista */
+}
 
         .timeline-item:hover {
             transform: translateX(10px);
@@ -205,11 +217,125 @@
             }
 
             section {
-                padding: 40px 0;
+                padding: 30px 0;
             }
 
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+        }
+        .nav-container {
+        background: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+            margin: 0 5px;
+        }
+
+        .nav-links li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px;
+            width: 1px;
+            background: #e0e0e0;
+        }
+
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 20px 25px;
+            display: block;
+            font-weight: 500;
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #3498db;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 70%;
+        }
+
+        /* Active state for current section */
+        .nav-links a.active {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            width: 70%;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .company-logo {
+            height: 100px;
+            width: auto;
+            filter: grayscale(100%) brightness(0) invert(1);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .company-logo:hover {
+            opacity: 1;
+            filter: grayscale(0) brightness(1) invert(0);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo-container {
+                gap: 20px;
+            }
+            .company-logo {
+                height: 40px;
             }
         }
     </style>
@@ -217,73 +343,140 @@
 <body>
     <header>
         <div class="container profile-header">
-            <img src="profile-placeholder.jpg" alt="John Carter" class="profile-img">
-            <div>
-                <h1>John Carter</h1>
-                <h3>Certified Public Accountant</h3>
-                <p>10+ years of experience in financial management and strategic planning</p>
+                <img src="TestImage.png" alt="Yuly Gomez" class="profile-img">
+                <div>
+                    <h1>Yuly Adriana Gómez Prieto</h1>
+                    <h3>Contadora Publica Certificada</h3>
+                    <p>Más de 10 años de experiencia en Contaduria y Revisoria Fiscal</p>
+                </div>
             </div>
         </div>
     </header>
 
-    <nav>
+    <nav class="nav-container">
         <div class="container">
             <ul class="nav-links">
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#education">Educación</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
         <section id="experience">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Experiencia Profesional</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Senior Financial Analyst - ABC Corp</h3>
-                    <p class="date">2018 - Present</p>
+                    <h3>Contabilidad para Propiedad Horizontal - Edificio Aqualuna</h3>
+                    <p class="date">Mayo 2021 – Actualidad</p>
                     <ul>
-                        <li>Led financial reporting for $50M+ annual revenue</li>
-                        <li>Implemented cost-saving measures saving $2M annually</li>
+                        <li>Contabilidad en World Office, manejo tributario y presupuestal</li>
                     </ul>
                 </div>
-                <!-- Add more timeline items -->
+                
+                <div class="timeline-item">
+                    <h3>Revisoría Fiscal (Independiente) - Casas de Manzaneda P.H.</h3>
+                    <p class="date">Julio 2021 – Actualidad</p>
+                    <ul>
+                        <li>Funciones de revisoría fiscal para propiedad horizontal</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Contabilidad para Propiedad Horizontal - Conjunto Residencial Calatayud Etapa I</h3>
+                    <p class="date">Abril 2018 – Actualidad</p>
+                    <ul>
+                        <li>Contabilidad en World Office, facturación, presupuesto, estados financieros e informes exógenos</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Revisoría Fiscal (Independiente) - Casas de Manzaneda 2 P.H.</h3>
+                    <p class="date">Abril 2015 – Actualidad</p>
+                    <ul>
+                        <li>Funciones de revisoría fiscal para propiedad horizontal</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Contabilidad para Propiedad Horizontal - Edificio Refugio Dos P.H.</h3>
+                    <p class="date">Mayo 2015 – Actualidad</p>
+                    <ul>
+                        <li>Contabilidad, presupuestos, facturación, informes financieros</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Revisoría Fiscal (Independiente) - Agrupación de Vivienda Milenta IV P.H.</h3>
+                    <p class="date">Febrero 2015 – Actualidad</p>
+                    <ul>
+                        <li>Ejecución de funciones establecidas en el Art. 57 de la Ley 675 de 2001</li>
+                        <li>Opinión profesional independiente sobre los estados financieros</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Contabilidad para Propiedad Horizontal - Edificio Derco Dos P.H.</h3>
+                    <p class="date">Mayo 2010 – Actualidad</p>
+                    <ul>
+                        <li>Contabilidad con EOG Software, informes financieros, ejecución presupuestal, bajo NIIF</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Auxiliar Contable - Rojas Bautista Ingenieros Constructores S.A.</h3>
+                    <p class="date">Marzo 2002 – Agosto 2004</p>
+                    <ul>
+                        <li>Contabilidad en Helisa, recaudo de cartera, facturación, nómina y liquidación de prestaciones sociales</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="education">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title">Educación </h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Master of Accountancy</h3>
-                    <p>University of Finance</p>
-                    <p class="date">2010 - 2012</p>
+                    <h3>Contadora Pública</h3>
+                    <p>Universidad de la Salle</p>
+                    <p class="date">2003 - 2008</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Cursos</h3>
+                    <p>Curso 50 horas SG-SST – SENA </p>
+                    <p>Entre otros...</p>
                 </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2 class="section-title">Professional Skills</h2>
+            <h2 class="section-title">Habilidades Profesionales</h2>
             <div class="skills-grid">
-                <div class="skill-item">Financial Reporting</div>
-                <div class="skill-item">Tax Planning</div>
-                <div class="skill-item">ERP Systems</div>
-                <div class="skill-item">Risk Management</div>
+                <div class="skill-item">Experiencia especializada</div>
+                <div class="skill-item">Conocimiento normativo</div>
+                <div class="skill-item">Habilidades técnicas</div>
+                <div class="skill-item">Liderazgo</div>
+                <div class="skill-item">Comunicación efectiva</div>
+                <div class="skill-item">Trabajo en equipo</div>
+                <div class="skill-item">Orientación al detalle</div>
+                <div class="skill-item">Independencia profesional</div>
+                <div class="skill-item">Adaptabilidad</div>
+                <div class="skill-item">Compromiso ético</div>
             </div>
         </section>
 
         <section id="contact">
-            <h2 class="section-title">Contact Information</h2>
+            <h2 class="section-title">Información De Contacto</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i>✉</i>
                     </div>
                     <div>
-                        <h3>Email</h3>
-                        <p>john.carter@example.com</p>
+                        <h3>Correo</h3>
+                        <p>yulygomezp@yahoo.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -291,8 +484,8 @@
                         <i>📱</i>
                     </div>
                     <div>
-                        <h3>Phone</h3>
-                        <p>(555) 123-4567</p>
+                        <h3>WhatsApp</h3>
+                        <p>305-354-9644</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -300,16 +493,16 @@
                         <i>🏢</i>
                     </div>
                     <div>
-                        <h3>Office</h3>
-                        <p>123 Financial District<br>New York, NY 10001</p>
+                        <h3>Oficina</h3>
+                        <p>Calle 46 #43 -71 <br>Teusaquillo, Bogotá</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i>🔗</i>
+                        <i>🪪</i>
                     </div>
                     <div>
-                        <h3>LinkedIn</h3>
+                        <h3>Tarjeta Profesional</h3>
                         <p>linkedin.com/in/johncarter</p>
                     </div>
                 </div>
@@ -317,11 +510,17 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 John Carter. All Rights Reserved.</p>
+<!-- In the footer section, replace the current content with this: -->
+<footer>
+    <div class="container">
+        <div class="logo-section">
+            <div class="logo-container">
+                <img src="LogoAlterno.png" alt="Company 2" class="company-logo">
+            </div>
         </div>
-    </footer>
+        <p>© 2025 Yuly Gomez. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
     <script>
         // Intersection Observer for scroll animations
